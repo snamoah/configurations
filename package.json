@@ -8,6 +8,7 @@
     "pretest": "npm run lint",
     "prepush": "npm run test",
     "precommit": "lint-staged",
+    "posttest": "rimraf -rf .nyc_output",
     "lint": "standard --verbose --fix | snazzy",
     "test": "nyc mocha test/setup.js '{,!(node_modules|coverage|docs)/**/}*.test.js' --color --no-timeouts"
   },
@@ -41,6 +42,7 @@
     "mocha": "^6.1.1",
     "nyc": "^13.3.0",
     "prettier-standard": "^9.1.1",
+    "rimraf": "^2.6.3",
     "snazzy": "^8.0.0",
     "standard": "^12.0.1"
   }
